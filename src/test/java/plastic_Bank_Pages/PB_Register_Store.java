@@ -29,10 +29,10 @@ public PB_Register_Store(AndroidDriver pBriver) {
 	public WebElement finalconfirmation;
 	@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Take a picture\")")
 	public WebElement takeAPicture;
-	@AndroidFindBy(uiAutomator = "new UiSelector().text(\"While using the app\")")
+	@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)While using the app\")")
 	public WebElement permission;
 
-	@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Allow\")")
+	@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)Allow\")")
 	public WebElement allow;
 	@AndroidFindBy(xpath= "//android.widget.ImageView[@content-desc=\"Shutter\"]")
 	public WebElement shutter;

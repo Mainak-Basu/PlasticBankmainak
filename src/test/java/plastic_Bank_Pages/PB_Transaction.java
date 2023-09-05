@@ -64,13 +64,13 @@ public WebElement viewHistory;
 public WebElement requiredQuantity;
 @AndroidFindBy(xpath= "//android.widget.ImageButton[@content-desc=\"Done\"]")
 public WebElement photoDone;
-@AndroidFindBy(uiAutomator = "new UiSelector().text(\"While using the app\")")
+@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)While using the app\")")
 public WebElement permission;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Exchange History\")")
 public WebElement exchangeHistory;
 @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.TextView\")")
 public List<WebElement>rewards;
-@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Allow\")")
+@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)Allow\")")
 public WebElement allow;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"arrow back\")")
 public WebElement arrowBack;
@@ -361,10 +361,10 @@ public void m1toB1(String m1number) throws InterruptedException {
 	            PointerInput fingerMemberTab = new PointerInput(PointerInput.Kind.TOUCH, "fingerMemberTab");
 	            Sequence scrollMemberTab = new Sequence(fingerMemberTab, 1);
 	            scrollMemberTab.addAction(fingerMemberTab.createPointerMove(Duration.ofMillis(0),
-	                PointerInput.Origin.viewport(), 400, 2060));
+	                PointerInput.Origin.viewport(), 408, 2122));
 	            scrollMemberTab.addAction(fingerMemberTab.createPointerDown(0));
 	            scrollMemberTab.addAction(fingerMemberTab.createPointerMove(Duration.ofMillis(100),
-	                PointerInput.Origin.viewport(), 400, 2060));
+	                PointerInput.Origin.viewport(), 408, 2122));
 	            scrollMemberTab.addAction(fingerMemberTab.createPointerUp(0));	
 	            pbDriver.perform(Arrays.asList(scrollMemberTab));
 	            

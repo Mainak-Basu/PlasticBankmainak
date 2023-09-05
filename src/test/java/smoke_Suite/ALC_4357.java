@@ -27,8 +27,8 @@ public class ALC_4357 extends BaseClass {
 		PB_LoginPage lo =new PB_LoginPage(pbDriver);
 		lo.login(branch1_Number, password);
 		t1.m1toB1(member_Number);
-		lo.logout();
-		
+		lo.clickmenu();
+        lo.clicklogout();		
 	}
 	@Test(priority =1,enabled=true, description = "1.Check Branch Details if KG Recycled, Members Registered and Active members count are correct. 2. In branch 1 exchange history, check, Member photo, material name, material amount, money amount , total and bonus amount and associated bonus name. 3.Check in Bonus search Area, KG promised KG delivered, and pending KG.. 4.Check HDPE and PET KG count in Bonus Summary. Also check bonus progress values... 5. Check if the start bonus is there for the first branch in  Bonus Approval and Assert Total Bonus/Needing Approval")
 	@Description("1.Check Branch Details if KG Recycled, Members Registered and Active members count are correct. 2. In branch 1 exchange history, check, Member photo, material name, material amount, money amount , total and bonus amount and associated bonus name. 3.Check in Bonus search Area, KG promised KG delivered, and pending KG.. 4.Check HDPE and PET KG count in Bonus Summary. Also check bonus progress values... 5. Check if the start bonus is there for the first branch in  Bonus Approval and Assert Total Bonus/Needing Approval")
@@ -56,7 +56,8 @@ public class ALC_4357 extends BaseClass {
 		PB_LoginPage lo =new PB_LoginPage(pbDriver);
 		lo.login(branch2_Number, password);
 		t2.b1toB2(branch1_Number);
-		lo.logout();
+		lo.clickmenu();
+        lo.clicklogout();	
 	}
 	
 	
@@ -69,7 +70,8 @@ public class ALC_4357 extends BaseClass {
 		PB_LoginPage lo =new PB_LoginPage(pbDriver);
 		lo.login(branch3_Number, password);
 		t3.b1toB3(branch1_Number);
-		lo.logout();
+		lo.clickmenu();
+        lo.clicklogout();	
 		
 	}
 	
@@ -80,7 +82,8 @@ public class ALC_4357 extends BaseClass {
 		PB_LoginPage lo =new PB_LoginPage(pbDriver);
 		lo.login(processor_Number, password);
 		t4.b2ToP(branch2_Number);
-		lo.logout();
+		lo.clickmenu();
+        lo.clicklogout();	
 	
 	}
 	
@@ -92,8 +95,8 @@ public class ALC_4357 extends BaseClass {
 		PB_LoginPage lo =new PB_LoginPage(pbDriver);
 		lo.login(processor_Number, password);
 		t5.b3ToP(branch3_Number);
-		lo.logout();
-		
+		lo.clickmenu();
+        lo.clicklogout();	
 	}
 	
 	

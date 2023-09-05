@@ -42,7 +42,7 @@ public WebElement passwordTextFeild;
 @AndroidFindBy(id= "org.plasticbank.app:id/action_bar_root")
 public WebElement loadedPage;
 
-@AndroidFindBy(uiAutomator = "new UiSelector().text(\"While using the app\")")
+@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)While using the app\")")
 public WebElement permission;
 
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"OK\")")

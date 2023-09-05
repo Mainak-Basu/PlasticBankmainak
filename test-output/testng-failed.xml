@@ -9,11 +9,12 @@
           <include name="generateRandomNumber"/>
           <include name="Plastic_Chain_After_Approval"/>
           <include name="dataCreation"/>
-          <include name="setup"/>
+          <include name="BonusTransferedCheck"/>
           <include name="afterMethod"/>
+          <include name="setup"/>
           <include name="generateRandomLastName"/>
-          <include name="teardown"/>
           <include name="generateBranchMemberName"/>
+          <include name="teardown"/>
           <include name="generateBranchName"/>
         </methods>
       </class> <!-- smoke_Suite.ALC_4357 -->

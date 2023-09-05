@@ -96,18 +96,18 @@ public WebElement takePhoto;
 public WebElement finalconfirmation;
 @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.Button\").instance(2)")
 public WebElement camera;
-@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Edit\")")
+@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)Edit\")")
 public WebElement editButton;
-@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Your account is not verified. Click here to verify.\")")
+@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)Your account is not verified. Click here to verify.\")")
 public WebElement verifyAccount;
 @AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.widget.EditText\").instance(2)")
 public WebElement enterSMS;
-@AndroidFindBy(uiAutomator = "new UiSelector().text(\"arrow back\")")
+@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)arrow back\")")
 public WebElement arrowBack;
-@AndroidFindBy(uiAutomator = "new UiSelector().text(\"While using the app\")")
+@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)While using the app\")")
 public WebElement permission;
 
-@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Allow\")")
+@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)Allow\")")
 public WebElement allow;
 
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Afghanistan (+93)\")")
