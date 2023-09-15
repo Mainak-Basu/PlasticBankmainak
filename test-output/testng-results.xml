@@ -1,104 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-29T16:19:15 IST" name="Default suite" finished-at="2023-08-29T16:21:42 IST" duration-ms="146713">
+  <suite started-at="2023-09-15T16:47:17 IST" name="Default suite" finished-at="2023-09-15T16:48:16 IST" duration-ms="59131">
     <groups>
     </groups>
-    <test started-at="2023-08-29T16:19:15 IST" name="Default test" finished-at="2023-08-29T16:21:42 IST" duration-ms="146713">
-      <class name="smoke_Suite.ALC_4357">
-        <test-method is-config="true" signature="dataCreation()[pri:0, instance:smoke_Suite.ALC_4357@13bc8645]" started-at="2023-08-29T16:17:32 IST" name="dataCreation" finished-at="2023-08-29T16:19:15 IST" duration-ms="102472" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataCreation -->
-        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:smoke_Suite.ALC_4357@13bc8645]" started-at="2023-08-29T16:19:15 IST" name="generateBranchMemberName" finished-at="2023-08-29T16:19:15 IST" duration-ms="4" status="PASS">
+    <test started-at="2023-09-15T16:47:17 IST" name="Default test" finished-at="2023-09-15T16:48:16 IST" duration-ms="59131">
+      <class name="smoke_Suite.ALC_4360">
+        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:smoke_Suite.ALC_4360@45385f75]" started-at="2023-09-15T16:47:17 IST" name="generateBranchMemberName" finished-at="2023-09-15T16:47:17 IST" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBranchMemberName -->
-        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:smoke_Suite.ALC_4357@13bc8645]" started-at="2023-08-29T16:19:15 IST" name="generateRandomBranchMemberNumber" finished-at="2023-08-29T16:19:15 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateRandomBranchMemberNumber -->
-        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:smoke_Suite.ALC_4357@13bc8645]" started-at="2023-08-29T16:19:15 IST" name="generateBranchName" finished-at="2023-08-29T16:19:15 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:smoke_Suite.ALC_4360@45385f75]" started-at="2023-09-15T16:47:17 IST" name="generateBranchName" finished-at="2023-09-15T16:47:17 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBranchName -->
-        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:smoke_Suite.ALC_4357@13bc8645]" started-at="2023-08-29T16:19:15 IST" name="generateRandomLastName" finished-at="2023-08-29T16:19:15 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:smoke_Suite.ALC_4360@45385f75]" started-at="2023-09-15T16:47:17 IST" name="generateRandomBranchMemberNumber" finished-at="2023-09-15T16:47:17 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- generateRandomLastName -->
-        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:smoke_Suite.ALC_4357@13bc8645]" started-at="2023-08-29T16:19:15 IST" name="generateRandomNumber" finished-at="2023-08-29T16:19:15 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- generateRandomBranchMemberNumber -->
+        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:smoke_Suite.ALC_4360@45385f75]" started-at="2023-09-15T16:47:17 IST" name="generateRandomNumber" finished-at="2023-09-15T16:47:17 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateRandomNumber -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4357@13bc8645]" started-at="2023-08-29T16:19:15 IST" name="setup" finished-at="2023-08-29T16:19:38 IST" duration-ms="23276" status="PASS">
+        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:smoke_Suite.ALC_4360@45385f75]" started-at="2023-09-15T16:47:17 IST" name="generateRandomLastName" finished-at="2023-09-15T16:47:17 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Plastic_Chain_After_Approval()[pri:14, instance:smoke_Suite.ALC_4357@13bc8645]" started-at="2023-08-29T16:19:38 IST" name="Plastic_Chain_After_Approval" description="Verified Check chain turned to green and is in order." finished-at="2023-08-29T16:21:37 IST" duration-ms="118507" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at org.testng.Assert.assertTrue(Assert.java:67)
-at alchemy_Pages.Plastic_Chain.ListElementsAssertion(Plastic_Chain.java:236)
-at alchemy_Pages.Plastic_Chain.plastic_ChainVerificationAfter(Plastic_Chain.java:340)
-at smoke_Suite.ALC_4357.Plastic_Chain_After_Approval(ALC_4357.java:186)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- generateRandomLastName -->
+        <test-method signature="run4360data()[pri:0, instance:smoke_Suite.ALC_4360@45385f75]" started-at="2023-09-15T16:47:17 IST" name="run4360data" finished-at="2023-09-15T16:48:16 IST" duration-ms="58831" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Plastic_Chain_After_Approval -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@13bc8645]" started-at="2023-08-29T16:21:37 IST" name="afterMethod" finished-at="2023-08-29T16:21:38 IST" duration-ms="840" status="PASS">
+        </test-method> <!-- run4360data -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4360@45385f75]" started-at="2023-09-15T16:48:16 IST" name="afterMethod" finished-at="2023-09-15T16:48:16 IST" duration-ms="10" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Plastic_Chain_After_Approval status=FAILURE method=ALC_4357.Plastic_Chain_After_Approval()[pri:14, instance:smoke_Suite.ALC_4357@13bc8645] output={null}]]]>
+                <![CDATA[[TestResult name=run4360data status=SUCCESS method=ALC_4360.run4360data()[pri:0, instance:smoke_Suite.ALC_4360@45385f75] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:smoke_Suite.ALC_4357@13bc8645]" started-at="2023-08-29T16:21:38 IST" name="teardown" finished-at="2023-08-29T16:21:42 IST" duration-ms="3762" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:smoke_Suite.ALC_4360@45385f75]" started-at="2023-09-15T16:48:16 IST" name="teardown" finished-at="2023-09-15T16:48:16 IST" duration-ms="32" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "io.appium.java_client.android.AndroidDriver.quit()" because "Utilities.BaseClass.pbDriver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "io.appium.java_client.android.AndroidDriver.quit()" because "Utilities.BaseClass.pbDriver" is null
+at Utilities.BaseClass.teardown(BaseClass.java:248)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:130)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- smoke_Suite.ALC_4357 -->
+        <test-method is-config="true" signature="teardown1()[pri:0, instance:smoke_Suite.ALC_4360@45385f75]" started-at="2023-09-15T16:48:16 IST" name="teardown1" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1694776696424" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown1 -->
+      </class> <!-- smoke_Suite.ALC_4360 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

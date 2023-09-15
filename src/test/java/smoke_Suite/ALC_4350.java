@@ -1,6 +1,8 @@
 package smoke_Suite;
 
 import Utilities.ScreenshotListener;
+
+import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.Test;
@@ -43,6 +45,20 @@ public class ALC_4350 extends BaseClass {
 		loginAlchmey.alc_adminlogin(adminphoneNumber,adminpassword);
 		Thread.sleep(3000);
 		
+	}
+	
+	@Test
+	public void just() throws InterruptedException {
+		AlchemyLoginPage loginAlchmey=new AlchemyLoginPage(alcDriver);
+		loginAlchmey.alc_adminlogin(adminphoneNumber,adminpassword);
+		Thread.sleep(3000);
+		alcDriver.findElement(By.xpath("//div[@class='body']/div/div/div[text()=' Stores ']")).click();
+		Thread.sleep(15000);
+		alcDriver.findElement(By.xpath("//div[text()=' Thailand ']")).click();
+		Thread.sleep(15000);
+		alcDriver.findElement(By.xpath("//span[text()='Edit']")).click();
+		Thread.sleep(15000);
+		alcDriver.findElement(By.xpath("//input[@id='reqPin']")).click();
 	}
 	@Test(priority =2, description = "New member account is searchable in Alchemy under the 'Members' section")
 	@Description("Verification of member in Alchmey")

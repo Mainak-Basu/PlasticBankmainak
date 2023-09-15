@@ -1,0 +1,234 @@
+{
+  "id": "e1f40ae3-43ca-4880-a447-6b53e059f379",
+  "values": [
+    {
+      "type": "any",
+      "value": "FleekyyedXA",
+      "key": "m1randomUsername"
+    },
+    {
+      "type": "any",
+      "value": "+637762187003",
+      "key": "m1randomNumber"
+    },
+    {
+      "type": "any",
+      "value": "4F810F9B-3A64-0115-0603-12D488EB5E27",
+      "key": "m1deviceID"
+    },
+    {
+      "type": "any",
+      "value": "f2a78c75-6416-4787-9878-a6f561ef5ce7",
+      "key": "m1id"
+    },
+    {
+      "type": "any",
+      "value": "f2a78c75-6416-4787-9878-a6f561ef5ce7",
+      "key": "m1entityId"
+    },
+    {
+      "type": "any",
+      "value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjYyNzY2NDksInN1YiI6ImYyYTc4Yzc1LTY0MTYtNDc4Ny05ODc4LWE2ZjU2MWVmNWNlNyJ9.-mKnu7eMfvxRc_AuW8FcdHr860xvuidVrmC93bw4Clnt8GKQ5dg2lzhx3-40Xi6JM5q1PjJAoKzVTcKuPGrLqw",
+      "key": "m1accessToken"
+    },
+    {
+      "type": "any",
+      "value": "FleekjaUkOu",
+      "key": "b1randomUsername"
+    },
+    {
+      "type": "any",
+      "value": "+631982879036",
+      "key": "b1randomNumber"
+    },
+    {
+      "type": "any",
+      "value": "559AF2FA-F970-F544-E29F-054553648A0C",
+      "key": "b1deviceID"
+    },
+    {
+      "type": "any",
+      "value": "cff4a373-0dca-4f81-82e7-a8a8d3c872a1",
+      "key": "b1id"
+    },
+    {
+      "type": "any",
+      "value": "cff4a373-0dca-4f81-82e7-a8a8d3c872a1",
+      "key": "b1entityId"
+    },
+    {
+      "type": "any",
+      "value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjYyNzY2NTQsInN1YiI6ImNmZjRhMzczLTBkY2EtNGY4MS04MmU3LWE4YThkM2M4NzJhMSJ9.ZFHV1U33F5stH0Q_OHhIuQ3N5OYGTZs8lxIj7ofniQwJSq1Fkz2lAlT0BA1UFfTwCwbLkWazgBUjHUiY7P-OSw",
+      "key": "b1accessToken"
+    },
+    {
+      "type": "any",
+      "value": "brancha_NAjIUCg5",
+      "key": "b1randomBranchName"
+    },
+    {
+      "type": "any",
+      "value": "ccd7449b-35f7-4618-9c21-a93584937e8e",
+      "key": "b1branchid"
+    },
+    {
+      "type": "any",
+      "value": "97cf7097-492a-4f87-9a41-fd10c7a07cce",
+      "key": "b1item1Id"
+    },
+    {
+      "type": "any",
+      "value": "4572a75f-a0f8-41bb-8a06-9a2343e05494",
+      "key": "b1item2Id"
+    },
+    {
+      "type": "any",
+      "value": "FleekN5SA4g",
+      "key": "b2randomUsername"
+    },
+    {
+      "type": "any",
+      "value": "+639169101272",
+      "key": "b2randomNumber"
+    },
+    {
+      "type": "any",
+      "value": "1392333A-0939-3E32-5DA4-071D2280AD34",
+      "key": "b2deviceID"
+    },
+    {
+      "type": "any",
+      "value": "0b61700c-2a03-4128-80c3-9fc1a3e3cf5f",
+      "key": "b2id"
+    },
+    {
+      "type": "any",
+      "value": "0b61700c-2a03-4128-80c3-9fc1a3e3cf5f",
+      "key": "b2entityId"
+    },
+    {
+      "type": "any",
+      "value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjYyNzY2NjIsInN1YiI6IjBiNjE3MDBjLTJhMDMtNDEyOC04MGMzLTlmYzFhM2UzY2Y1ZiJ9.5SVKe031vikUQOFh72WikPUtSPrQCsRSc021Go3tYmJC1O_NPFexPe3lzSSSVsLM1QI7Xbr4MCufxaEie0znyw",
+      "key": "b2accessToken"
+    },
+    {
+      "type": "any",
+      "value": "branchb_b5aJfSJz",
+      "key": "b2randomBranchName"
+    },
+    {
+      "type": "any",
+      "value": "41d53e8e-2652-4ddc-91e5-d2eb247d9fa6",
+      "key": "b2branchid"
+    },
+    {
+      "type": "any",
+      "value": "ab013850-cefb-4b68-84bc-0c2e82b7d281",
+      "key": "b2item1Id"
+    },
+    {
+      "type": "any",
+      "value": "403ea0d5-2d8e-4982-8c99-b97bd2b00e41",
+      "key": "b2item2Id"
+    },
+    {
+      "type": "any",
+      "value": "Fleek9rWUfQ",
+      "key": "p1randomUsername"
+    },
+    {
+      "type": "any",
+      "value": "+634282322388",
+      "key": "p1randomNumber"
+    },
+    {
+      "type": "any",
+      "value": "6501F745-3140-F934-8AA0-A2C6A9C50FA3",
+      "key": "p1deviceID"
+    },
+    {
+      "type": "any",
+      "value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjYyNzY2NjksInN1YiI6IjhmMTU2OTQzLWU4YjgtNGI2Yi04NWM2LTI0OGZlYjkzNDdiYyJ9.N_AE6qza_9IpLfCrn3NCWQwwPBTOv9-u53M708mDffVb1cKYEpYgIcfx0VQictiAzeCcn3u6zJS-Qw8dOqjr0Q",
+      "key": "p1accessToken"
+    },
+    {
+      "type": "any",
+      "value": "8f156943-e8b8-4b6b-85c6-248feb9347bc",
+      "key": "p1userId"
+    },
+    {
+      "type": "any",
+      "value": "process_eF8kuxBW",
+      "key": "p1randomProcessorName"
+    },
+    {
+      "type": "any",
+      "value": "602ca157-8f61-42e8-9c4a-1bbc003732c4",
+      "key": "p1processorid"
+    },
+    {
+      "type": "any",
+      "value": "04aff7de-b5b9-46e1-a9e9-78ab44501b84",
+      "key": "p1item1Id"
+    },
+    {
+      "type": "any",
+      "value": "3b6d3d5a-ba20-441a-bb0e-c86814a18ef8",
+      "key": "p1item2Id"
+    },
+    {
+      "type": "any",
+      "value": "580647513f55cec45644d10a81008b05",
+      "key": "sessionCode"
+    },
+    {
+      "type": "any",
+      "value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ3Nzg0NzUsInN1YiI6IjY4ZTJiNDMxLTMxMTYtNDQyZC1iNTVkLWRiZTUyNDJiYjliMiJ9.SV7CONmSNaokq15zcJwi2wkwvFlY-HrlOze226Z5-QX26KtB_uqBlq8O-LXN8gjJ37na29N9RdD1rg9lyDg2uw",
+      "key": "alchemytoken"
+    },
+    {
+      "type": "any",
+      "value": "rmxXEfElHAUhN-kvVdJ4jPb3a78=",
+      "key": "bonusordersessionCode"
+    },
+    {
+      "type": "any",
+      "value": "2023-09-15T11:18:07.002Z",
+      "key": "formattedDateTime"
+    },
+    {
+      "type": "any",
+      "value": "FleektnoRtw",
+      "key": "bonusOrderName"
+    },
+    {
+      "type": "any",
+      "value": "94a8a7a5-adfc-4b5a-a0e0-1c58da8787bf",
+      "key": "bonusOrderId"
+    },
+    {
+      "type": "any",
+      "value": "3yGM9pbQHrXL0WQv3ShMcrnzFOE=",
+      "key": "addprosessionCode"
+    },
+    {
+      "type": "any",
+      "value": "9f8c26d0-67a8-4835-88da-e2eccce280c8",
+      "key": "t1Id"
+    },
+    {
+      "type": "any",
+      "value": "943bb0fc-fecf-40a8-b980-06164108a78d",
+      "key": "t2Id"
+    },
+    {
+      "type": "any",
+      "value": "ea768c35-d6a1-4c79-98d4-7880ab7aa0a2",
+      "key": "t4Id"
+    }
+  ],
+  "name": "environment",
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2023-09-15T11:18:15.328Z",
+  "_postman_exported_using": "Newman/5.3.2"
+}

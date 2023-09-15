@@ -25,7 +25,7 @@ public class PB_Member_Profile extends BaseClass{
     public WebElement tokenValue;
 
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"While using the app\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)While using the app\")")
     public WebElement permission;
 
 

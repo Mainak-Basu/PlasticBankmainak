@@ -23,6 +23,7 @@ import org.openqa.selenium.support.PageFactory;
 
 
 import Utilities.BaseClass;
+import Utilities.PostmanNewman;
 import io.qameta.allure.Allure;
 
 
@@ -114,14 +115,22 @@ WebElement errorsToggle;
 WebElement bonusToggle;
 @FindBy(xpath = "//div[@class='disable-btn approve-true-state']")
 WebElement approveButton;
-
+@FindBy(xpath = "//div[@class='switch bonus-checked']")
+WebElement bonustoggle;
+@FindBy(xpath = "//textarea")
+WebElement textarea;
+@FindBy(xpath = "//span[text()=' Disable ']")
+WebElement disable;
 @FindBy(xpath = "//*[text()='Plastik-HDPE-Clean-Clear']/parent::div/div[2]")
 WebElement hdpeKgAlcText;
 @FindBy(xpath = "//*[text()='Plastik-PET-Raw-Transparent']/parent::div/div[2]")
 WebElement petKgAlcText;
 @FindBy(xpath = "//div[text()='TOTAL']/following-sibling::div")
 WebElement totalKgAlcText;
-
+@FindBy(xpath = "//label[text()='Branch Bonus']/following-sibling::div/div")
+WebElement branchbonus;
+@FindBy(xpath = "//label[text()='Member Bonus']/following-sibling::div/div")
+WebElement memberbonus;
 @FindBy(xpath = "//div[@class='card-header']/div/button")
 List<WebElement> transactions;
 
@@ -141,20 +150,56 @@ List<WebElement> noFraudNoErrorsToggle;
 
 @FindBy(xpath = "//div[@class='text-natural-green']")
 WebElement branchBonusTextInAlchmeyVerify; ///////
-
+@FindBy(xpath = "//button[text()='Close']")
+WebElement close;
 @FindBy(xpath = "//span[text()='(transferred)']")
 WebElement transferedTextDisplay;
 
+@FindBy(xpath = "//div[text()='KG Recycled']/following-sibling::div/div/following-sibling::div/div")
+WebElement kgrecycled;
+
 @FindBy(xpath = "//div[@class='card-header']/div/div/button[text()='Approved']")
 List<WebElement> approvedConfirm;
+@FindBy(xpath = "//div[@class='card-header']")
+List<WebElement> cardheaders;
 
 @FindBy(xpath = "//div[contains(@class,'col pl')]/div")
 List<WebElement> branchDetailsTagTexts;
 
 
-public void verifybranchDetailsTagTexts() {
-	
+public void verifykgrecycled() {
+	alcDriver.get("https://qa-admin.cognitionfoundry.io/#/admin/collectionpoint/"+PostmanNewman.b1id4360);
+	assertTrue(kgrecycled.getText()==" 19 ");
 }
+
+public void verifyDelayedBonus() {
+	exchangeHistoryTab.click();
+	cardheaders.get(0).click();
+	assertTrue(branchbonus.getText()=="30");
+	cardheaders.get(0).click();
+	cardheaders.get(1).click();
+	assertTrue(memberbonus.getText()=="133");
+	cardheaders.get(1).click();
+	alcDriver.get("https://qa-admin.cognitionfoundry.io/#/admin/collectionpoint/"+PostmanNewman.b2id4360);
+	exchangeHistoryTab.click();
+	cardheaders.get(0).click();
+	assertTrue(branchbonus.getText()=="14");
+	cardheaders.get(0).click();
+	cardheaders.get(1).click();
+	assertTrue(branchbonus.getText()=="30");
+	cardheaders.get(1).click();
+}
+
+public void disablebonus() {
+	alcDriver.get("https://qa-admin.cognitionfoundry.io/#/admin/collectionpoint/"+PostmanNewman.b1id4360);
+	exchangeHistoryTab.click();
+	cardheaders.get(1).click();
+	bonustoggle.click();
+	textarea.sendKeys("Test");
+	disable.click();
+	close.click();
+}
+
 public void searchAddedBranch(String Name) {
 	name_SearchBox.sendKeys(Name);
 }

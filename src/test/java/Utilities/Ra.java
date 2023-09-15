@@ -1,12 +1,14 @@
-/*package Utilities;
+package Utilities;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 import org.json.JSONObject;
+import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
 import io.restassured.RestAssured;
@@ -15,6 +17,18 @@ import io.restassured.response.Response;
 
 public class Ra extends BaseClass{
 
+	public static ArrayList<String> members=new ArrayList<String>();
+	public static ArrayList<String> numbers=new ArrayList<String>();
+	public static ArrayList<String> branches=new ArrayList<String>();
+	public static ArrayList<String> branchIds=new ArrayList<String>();
+	public static ArrayList<String> branchpet=new ArrayList<String>();
+	public static ArrayList<String> branchhdpe=new ArrayList<String>();
+	public static ArrayList<String> processors=new ArrayList<String>();
+	public static ArrayList<String> processorIds=new ArrayList<String>();
+	public static ArrayList<String> processorhdpe=new ArrayList<String>();
+	public static ArrayList<String> processorpet=new ArrayList<String>();
+	public static String bonusOrderName;
+	
 	
 	public static String getRandomProcessorName() {
         String prefix = "process_";
@@ -125,6 +139,8 @@ public static String getRandomBranch3Name() {
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
     String formattedDateTime = dateFormat.format(now);
 
+    
+    @Test
 public void sendPostRequest() throws IOException {
 RestAssured.baseURI = "https://qapb.cognitionfoundry.io"; // Your API endpoint
 
@@ -441,20 +457,22 @@ String alchemytoken= responsealchemy2fal.path("token");
 for(int i=0;i<3;i++) {
 JSONObject data2 = new JSONObject();
 data2.put("offsetEligible",true);
-         given()
+Response responseEditBranch1=RestAssured.given()
 		.contentType(ContentType.JSON)
 		.header("Authorization", "Bearer " + alchemytoken) 
 		.body(data2.toString())
 		.post("/admin/cp/"+ branchIds.get(i)+"/item/"+branchhdpe.get(i));
+         System.out.println("Response for  setting item bonus (hdpe): " + responseEditBranch1.body().asString());
+
 
 JSONObject data3 = new JSONObject();
          data3.put("offsetEligible",true);
-                  given()
+         Response responseEditBranch=RestAssured.given()
          		.contentType(ContentType.JSON)
          		.header("Authorization", "Bearer " + alchemytoken) 
          		.body(data3.toString())
          		.post("/admin/cp/"+ branchIds.get(i)+"/item/"+branchpet.get(i));
-   
+                  System.out.println("Response for  setting item bonus (pet): " + responseEditBranch.body().asString());
 }
 
 for(int i=0;i<3;i++) {
@@ -529,7 +547,7 @@ Response twofafboe=RestAssured.  given()
 String addprosessionCode= twofafboe.path("sessionCode");
 System.out.println("Response for two factor auth for bonus order edit : " + twofafboe.body().asString());
 
-String last="addprocessorinbonusorder.json";
+String last=".\\addprocessorinbonusorder.json";
 String lAst = Files.readString(Paths.get(last));
 
 String lastbody=lAst
@@ -560,4 +578,4 @@ System.out.println("bonus order name-----"+bonusOrderName);
 }
 
 
-}*/
+}

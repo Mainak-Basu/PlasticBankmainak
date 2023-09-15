@@ -25,7 +25,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 	
 	
-	@BeforeSuite
+	//@BeforeSuite
 	 public void dataCreation() throws IOException {
 			
 			PostmanNewman pn = new PostmanNewman();
@@ -33,7 +33,7 @@ public class BaseClass {
 			 
 		  }
 
-	public static String bonusName="FleekHUj52x";
+	public static String bonusName;
 	public static String password ="123456a"; 
 
 	public static String member_Name;
@@ -140,7 +140,7 @@ public class BaseClass {
 	public String branchName;
 
 	@SuppressWarnings("deprecation")
-	@BeforeClass
+	//@BeforeClass
 
 	public void setup() throws IOException {
 
@@ -160,7 +160,7 @@ public class BaseClass {
 		caps.setCapability("newCommandTimeout", 9000);
 		caps.setCapability("appPackage", "org.plasticbank.app");
 		caps.setCapability("appActivity", "org.plasticbank.app.MainActivity");
-		URL url = new URL("http://0.0.0.0:4723/wd/hub");
+		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 
 		pbDriver = new AndroidDriver(url, caps);
 		
@@ -246,6 +246,18 @@ public class BaseClass {
 
 		try {
 			pbDriver.quit();
+			
+		}
+		catch (NoSuchSessionException e){
+			System.out.print("No such session exception call"+e.getMessage());
+		}
+
+	}
+	@AfterClass
+	public void teardown1() {
+
+		try {
+			
 			alcDriver.quit();
 		}
 		catch (NoSuchSessionException e){
