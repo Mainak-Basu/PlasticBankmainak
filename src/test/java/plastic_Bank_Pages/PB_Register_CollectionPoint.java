@@ -23,7 +23,8 @@ public PB_Register_CollectionPoint(AndroidDriver pbDriver) {
 		
 		PageFactory.initElements(new AppiumFieldDecorator(pbDriver), this);
 	}
-
+@AndroidFindBy(uiAutomator="new UiSelector().text(\"search outline\")")
+public WebElement searchOutline;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Log in\")")
 public WebElement loginButton;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Logout\")")
@@ -42,8 +43,12 @@ public WebElement loadedPage;
 public WebElement permission;
 @AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)Allow\")")
 public WebElement allow;
+@AndroidFindBy(uiAutomator = "new UiSelector().textMatches(\"(?i)Track a Donation\")")
+public WebElement chooseDonation;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Finish\")")
 public WebElement finishButton;
+@AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"rocess\")")
+public WebElement processor;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Create Business\")")
 public WebElement createBusinessButton;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Recycling Business\")")
@@ -86,6 +91,8 @@ public WebElement sundayCheckBox;
 public WebElement saveButton;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"OK\")")
 public WebElement OKButton;
+@AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Loading\")")
+public WebElement loading;
 @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(0)")
 public WebElement cashValuePerKgTextField;
 @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(1)")
@@ -111,7 +118,7 @@ public WebElement maleOption;
 
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"REGISTER MEMBER\")")
 public WebElement registerUser;
-
+WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
 public void createBranch() throws InterruptedException {
 //Creating branch after member signup or login.
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
@@ -304,6 +311,45 @@ public void addMemberToCreatedBranch() throws InterruptedException {
     crossButton.click();
     
     
+}
+
+
+public void addDonation(){
+	
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+	
+	PointerInput fingerconfirmpassword = new PointerInput(PointerInput.Kind.TOUCH, "fingerconfirmpassword");
+    Sequence scrollconfirmpassword = new Sequence(fingerconfirmpassword, 1);
+    scrollconfirmpassword.addAction(fingerconfirmpassword.createPointerMove(Duration.ofMillis(0),
+        PointerInput.Origin.viewport(), 950, 2122));
+    scrollconfirmpassword.addAction(fingerconfirmpassword.createPointerDown(0));
+    scrollconfirmpassword.addAction(fingerconfirmpassword.createPointerMove(Duration.ofMillis(100),
+        PointerInput.Origin.viewport(), 950, 2122));
+    scrollconfirmpassword.addAction(fingerconfirmpassword.createPointerUp(0));
+    pbDriver.perform(Arrays.asList(scrollconfirmpassword));
+    wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(addButton)));
+    addButton.click();
+    wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
+    wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(addButton)));
+    addButton.click();
+    wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(chooseDonation)));
+    chooseDonation.click();
+    wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(OKButton)));
+    OKButton.click();
+    wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
+    wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menuButton)));
+    menuButton.click();
+    wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logoutButton)));
+    logoutButton.click();
+}
+
+
+public void goToProcessor(){
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
+	 wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menuButton)));
+	    menuButton.click();
+	    wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(processor)));
+	    processor.click();
 }
 
 }

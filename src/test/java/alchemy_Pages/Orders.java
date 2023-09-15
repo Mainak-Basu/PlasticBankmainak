@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.BaseClass;
+import Utilities.PostmanNewman;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -104,6 +105,18 @@ public class Orders extends BaseClass{
     //Total Weight: 19.00 KG
     @FindBy(xpath = "//div[text()='Bonus']/following-sibling::div") 
     WebElement excHisTotalBonus;
+    @FindBy(xpath = "//div[text()='Bonus Approval ']") 
+    WebElement bonusApproval;
+    @FindBy(xpath = "//span[text()='Start Approval']") 
+    WebElement startApproval;
+    @FindBy(xpath = "//div[@class='card-header']")
+    List<WebElement> cardheaders;
+    
+    @FindBy(xpath = "//div[text()='30 ']") 
+    WebElement bonus30;
+    @FindBy(xpath = "//div[text()='133 ']") 
+    WebElement bonus133;
+  
     //133
     @FindBy(xpath = "//div[@role='tab']/div/button") WebElement selectAddedBranchInBonus;
     @FindBy(xpath = "//button/span[text()=' Edit Bonus Options']") WebElement editBonusOpt;
@@ -112,7 +125,8 @@ public class Orders extends BaseClass{
     @FindBy(xpath = "//button[text()=' Confirm new participants']") WebElement confirmNewParticipants;
     @FindBy(xpath = "//button[text()='Close']") WebElement closeBtnPopup;
     @FindBy(xpath = "//button[text()='Save']") WebElement saveBonusInfoBtn;
-    
+    @FindBy(xpath = "//a[contains(text(),'Sell Transactions')]") WebElement selltransactions;   
+    @FindBy(xpath = "//a[contains(text(),'Buy Transactions')]") WebElement buytransactions;   
     public static String expectedexcHisHdpeKG="HDPE-Clean-Clear / 10.00 kg";
     public static String expectedexcHisPetKG="PET-Raw-Transparent / 9.00 kg";
     public static String expectedexcHisHdpeBonus="Bonus 70";
@@ -120,6 +134,25 @@ public class Orders extends BaseClass{
     public static String expectedexcHisTotalKg="Total Weight: 19.00 KG";
     public static String expectedexcHisTotalBonus="133";
 
+    
+    
+    
+    public void buySellPresent() {
+    	alcDriver.get("https://qa-admin.cognitionfoundry.io/#/admin/ordersoffsets/offset/"+PostmanNewman.bonusid4360);
+    		bonusApproval.click();
+    		cardheaders.get(0).click();
+    			startApproval.click();
+    			cardheaders.get(0).click();
+    		bonus30.isDisplayed();
+    		buytransactions.click();
+    		cardheaders.get(0).click();
+    		bonus133.isDisplayed();
+    }
+    
+    
+    
+    
+    
     public void clickOrdersTab() throws InterruptedException {
 		/*
 		 * WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));

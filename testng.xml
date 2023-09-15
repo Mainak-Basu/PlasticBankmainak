@@ -10,6 +10,7 @@
       <class name="smoke_Suite.ALC_4365"/>
       <class name="smoke_Suite.ALC_4366"/>
       <class name="smoke_Suite.ALC_4357"/>
+      <class name="smoke_Suite.ALC_4361"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
