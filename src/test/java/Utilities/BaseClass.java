@@ -28,7 +28,7 @@ public class BaseClass {
 	//@BeforeSuite
 	 public void dataCreation() throws IOException {
 			
-			PostmanNewman pn = new PostmanNewman();
+			Data pn = new Data();
 			pn.runNewman(); 
 			 
 		  }
@@ -138,18 +138,20 @@ public class BaseClass {
 	public String adminphoneNumber;
 	public String adminpassword;
 	public String branchName;
-
+	public static String temp= "upgrade-admin.cognitionfoundry.io";
+	public static String actual = "qa-admin.cognitionfoundry.io";
 	@SuppressWarnings("deprecation")
-	//@BeforeClass
+	@BeforeClass
 
 	public void setup() throws IOException {
 
 		WebDriverManager.chromedriver().setup();
 		alcDriver = new ChromeDriver();
 		alcDriver.manage().window().maximize();
-		alcDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		alcDriver.get("https://qa-admin.cognitionfoundry.io/#/login");
-
+		alcDriver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		alcDriver.get("https://"+temp+"/#/login");
+			
+		
 		DesiredCapabilities caps = new DesiredCapabilities();
 
 		caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
@@ -236,7 +238,7 @@ public class BaseClass {
 			TakesScreenshot ts = (TakesScreenshot) alcDriver;
 			byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
 			Allure.addAttachment("Screenshot", new ByteArrayInputStream(screenshot));
-			TakesScreenshot pb_ts = pbDriver;
+			TakesScreenshot pb_ts = (TakesScreenshot) pbDriver;
 			byte[] screenshot_pb = pb_ts.getScreenshotAs(OutputType.BYTES);
 			Allure.addAttachment("Screenshot_pb", new ByteArrayInputStream(screenshot_pb));
 		}

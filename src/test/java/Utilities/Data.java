@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class PostmanNewman extends BaseClass{
+public class Data extends BaseClass{
 	
 	public static ArrayList<String> values=new ArrayList<String>();
 	public static ArrayList<String> values_ALC_4361=new ArrayList<String>();
@@ -273,7 +273,7 @@ public class PostmanNewman extends BaseClass{
 	        
 	        // Send commands to the window
 	        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
-	        writer.write("newman run mb1b2p_without_bonus.postman_collection.json --export-environment variablenobonuspaid.json\n");
+	        writer.write("newman run mb1b2p_without_bonus_upgrade.postman_collection.json --export-environment variablenobonuspaid.json\n");
 	        writer.flush();
 	        writer.close(); // Close the writer to signal the end of input
 	        

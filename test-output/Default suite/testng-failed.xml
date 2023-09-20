@@ -5,16 +5,19 @@
     <classes>
       <class name="smoke_Suite.ALC_4360">
         <methods>
+          <include name="disablebonus"/>
+          <include name="afterMethod"/>
+          <include name="generateRandomLastName"/>
+          <include name="generateBranchName"/>
           <include name="run4360data"/>
           <include name="generateRandomBranchMemberNumber"/>
           <include name="generateRandomNumber"/>
-          <include name="afterMethod"/>
+          <include name="alchemySteps"/>
+          <include name="appSteps"/>
           <include name="setup"/>
-          <include name="generateRandomLastName"/>
           <include name="teardown1"/>
           <include name="generateBranchMemberName"/>
           <include name="teardown"/>
-          <include name="generateBranchName"/>
         </methods>
       </class> <!-- smoke_Suite.ALC_4360 -->
     </classes>

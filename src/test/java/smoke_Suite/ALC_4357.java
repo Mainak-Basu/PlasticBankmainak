@@ -1,9 +1,12 @@
 package smoke_Suite;
 
+import java.io.IOException;
+
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Utilities.BaseClass;
+import Utilities.Data;
 import alchemy_Pages.AlchemyLoginPage;
 import alchemy_Pages.Bonus;
 import alchemy_Pages.Branches;

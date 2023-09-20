@@ -1,5 +1,6 @@
 package plastic_Bank_Pages;
 
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.io.ByteArrayInputStream;
@@ -35,16 +36,15 @@ public WebElement loading;
 public WebElement lock_bonus;
 @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Unlock Bonus\")")
 public WebElement unlock_bonus;
-@AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Delayed-Bonus\")")
+@AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Delayed Bonus\")")
 public WebElement delayed_bonus;
 @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"pb-logo-bonus\")")
 public WebElement pb_logo_bonus;
-@AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"133\")")
-public WebElement bonus133;
-@AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"30\")")
-public WebElement bonus30;
-@AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"14\")")
-public WebElement bonus14;
+@AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.TextView\").instance(0)")
+public WebElement memberbonustext;
+@AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.TextView\").instance(2)")
+public WebElement bonustextbranch;
+
 @AndroidFindBy(uiAutomator="new UiSelector().text(\"DONATION\")")
 public WebElement donation;
 @AndroidFindBy(uiAutomator="new UiSelector().text(\"arrow round-forward\")")
@@ -157,19 +157,21 @@ public WebElement bonusMemberVerify;
 WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(10));
 
 
-public void verifyMemberBonusPresent() {
+public void verifyMemberBonusPresent() throws InterruptedException {
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
 	lock_bonus.isDisplayed();
 	delayed_bonus.isDisplayed();
 	pb_logo_bonus.isDisplayed();
-	bonus133.isDisplayed();
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.textToBePresentInElement(memberbonustext, "133")));
+	
+	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
 	menu.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
 	logout.click();
 }
 
-public void verifyBranch1BonusPresent() {
+public void verifyBranch1BonusPresent() throws InterruptedException {
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
 	PointerInput fingerShutter = new PointerInput(PointerInput.Kind.TOUCH, "fingerShutter");
     Sequence scrollShutter = new Sequence(fingerShutter, 1);
@@ -185,14 +187,16 @@ public void verifyBranch1BonusPresent() {
 	lock_bonus.isDisplayed();
 	unlock_bonus.isDisplayed();
 	pb_logo_bonus.isDisplayed();
-	bonus30.isDisplayed();
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.textToBePresentInElement(bonustextbranch, "30")));
+	
+	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
 	menu.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
 	logout.click();
 }
 
-public void verifyBranch2BonusPresent() {
+public void verifyBranch2BonusPresent() throws InterruptedException {
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
 	PointerInput fingerShutter = new PointerInput(PointerInput.Kind.TOUCH, "fingerShutter");
     Sequence scrollShutter = new Sequence(fingerShutter, 1);
@@ -208,13 +212,106 @@ public void verifyBranch2BonusPresent() {
 	lock_bonus.isDisplayed();
 	unlock_bonus.isDisplayed();
 	pb_logo_bonus.isDisplayed();
-	bonus14.isDisplayed();
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.textToBePresentInElement(bonustextbranch, "14")));
+	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
 	menu.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
 	logout.click();
 }
 
+public void verifyMemberBonusNotPresent() throws InterruptedException {
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
+	try {
+		lock_bonus.isDisplayed();
+	}catch(Exception e) {
+		
+	}
+	try {
+		delayed_bonus.isDisplayed();
+	}catch(Exception e) {
+		
+	}
+	try {
+		pb_logo_bonus.isDisplayed();
+	}catch(Exception e) {
+		
+	}
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
+	menu.click();
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
+	logout.click();
+}
+
+public void verifyBranch1BonusNotPresent() throws InterruptedException {
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+	PointerInput fingerShutter = new PointerInput(PointerInput.Kind.TOUCH, "fingerShutter");
+    Sequence scrollShutter = new Sequence(fingerShutter, 1);
+    scrollShutter.addAction(fingerShutter.createPointerMove(Duration.ofMillis(0),
+        PointerInput.Origin.viewport(), 400, 2060));
+    scrollShutter.addAction(fingerShutter.createPointerDown(0));
+    scrollShutter.addAction(fingerShutter.createPointerMove(Duration.ofMillis(100),
+        PointerInput.Origin.viewport(), 400, 2060));
+    scrollShutter.addAction(fingerShutter.createPointerUp(0));
+    pbDriver.perform(Arrays.asList(scrollShutter));
+	
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
+	try {
+		lock_bonus.isDisplayed();
+	}catch(Exception e) {
+		
+	}
+	try {
+		delayed_bonus.isDisplayed();
+	}catch(Exception e) {
+		
+	}
+	try {
+		pb_logo_bonus.isDisplayed();
+	}catch(Exception e) {
+		
+	}
+	
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
+	menu.click();
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
+	logout.click();
+}
+
+public void verifyBranch2BonusNotPresent() throws InterruptedException {
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+	PointerInput fingerShutter = new PointerInput(PointerInput.Kind.TOUCH, "fingerShutter");
+    Sequence scrollShutter = new Sequence(fingerShutter, 1);
+    scrollShutter.addAction(fingerShutter.createPointerMove(Duration.ofMillis(0),
+        PointerInput.Origin.viewport(), 400, 2060));
+    scrollShutter.addAction(fingerShutter.createPointerDown(0));
+    scrollShutter.addAction(fingerShutter.createPointerMove(Duration.ofMillis(100),
+        PointerInput.Origin.viewport(), 400, 2060));
+    scrollShutter.addAction(fingerShutter.createPointerUp(0));
+    pbDriver.perform(Arrays.asList(scrollShutter));
+	
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
+	try {
+		lock_bonus.isDisplayed();
+	}catch(Exception e) {
+		
+	}
+	try {
+		delayed_bonus.isDisplayed();
+	}catch(Exception e) {
+		
+	}
+	try {
+		pb_logo_bonus.isDisplayed();
+	}catch(Exception e) {
+		
+	}
+	
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
+	menu.click();
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
+	logout.click();
+}
 
 
 

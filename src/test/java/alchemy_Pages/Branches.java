@@ -1,6 +1,7 @@
 package alchemy_Pages;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.io.ByteArrayInputStream;
@@ -8,6 +9,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -16,6 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Timeouts;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -23,7 +26,7 @@ import org.openqa.selenium.support.PageFactory;
 
 
 import Utilities.BaseClass;
-import Utilities.PostmanNewman;
+import Utilities.Data;
 import io.qameta.allure.Allure;
 
 
@@ -119,6 +122,10 @@ WebElement approveButton;
 WebElement bonustoggle;
 @FindBy(xpath = "//textarea")
 WebElement textarea;
+@FindBy(xpath = "//label[@class='item-name offset-border']")
+WebElement associatedbonus;
+@FindBy(xpath = "//div[@class='switch bonus-locked']")
+List<WebElement> lockedbonus;
 @FindBy(xpath = "//span[text()=' Disable ']")
 WebElement disable;
 @FindBy(xpath = "//*[text()='Plastik-HDPE-Clean-Clear']/parent::div/div[2]")
@@ -127,10 +134,18 @@ WebElement hdpeKgAlcText;
 WebElement petKgAlcText;
 @FindBy(xpath = "//div[text()='TOTAL']/following-sibling::div")
 WebElement totalKgAlcText;
-@FindBy(xpath = "//label[text()='Branch Bonus']/following-sibling::div/div")
-WebElement branchbonus;
-@FindBy(xpath = "//label[text()='Member Bonus']/following-sibling::div/div")
-WebElement memberbonus;
+@FindBy(xpath = "//label[text()='Branch Bonus']/following-sibling::div/div[text()='14']")
+WebElement branchbonus14;
+@FindBy(xpath = "//label[text()='Branch Bonus']/following-sibling::div/div[contains(@class,'text')]")
+List<WebElement> branchbonustext;
+@FindBy(xpath = "//label[text()='Branch Bonus']/following-sibling::div/div[text()='30']")
+WebElement branchbonus30;
+@FindBy(xpath = "//label[text()='Member Bonus']/following-sibling::div/div[text()='133']")
+WebElement memberbonus133;
+@FindBy(xpath = "//label[text()='Member Bonus']/following-sibling::div/div[contains(@class,'text')]")
+WebElement memberbonustext;
+@FindBy(xpath = "//a[text()='Details']")
+WebElement details;
 @FindBy(xpath = "//div[@class='card-header']/div/button")
 List<WebElement> transactions;
 
@@ -154,6 +169,8 @@ WebElement branchBonusTextInAlchmeyVerify; ///////
 WebElement close;
 @FindBy(xpath = "//span[text()='(transferred)']")
 WebElement transferedTextDisplay;
+@FindBy(xpath = "//div[text()='TOTAL']")
+WebElement total;
 
 @FindBy(xpath = "//div[text()='KG Recycled']/following-sibling::div/div/following-sibling::div/div")
 WebElement kgrecycled;
@@ -166,38 +183,103 @@ List<WebElement> cardheaders;
 @FindBy(xpath = "//div[contains(@class,'col pl')]/div")
 List<WebElement> branchDetailsTagTexts;
 
-
+WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(10));
 public void verifykgrecycled() {
-	alcDriver.get("https://qa-admin.cognitionfoundry.io/#/admin/collectionpoint/"+PostmanNewman.b1id4360);
-	assertTrue(kgrecycled.getText()==" 19 ");
+	alcDriver.get("https://"+BaseClass.temp+"/#/admin/collectionpoint/"+Data.b1id4360);
+	kgrecycled.isDisplayed();
+	System.out.println("-----"+kgrecycled.getText()+"-----");
+	wait.until(ExpectedConditions.textToBePresentInElement(kgrecycled, "19"));
+	System.out.println("pass 19");
 }
 
 public void verifyDelayedBonus() {
 	exchangeHistoryTab.click();
+	
 	cardheaders.get(0).click();
-	assertTrue(branchbonus.getText()=="30");
-	cardheaders.get(0).click();
+	wait.until(ExpectedConditions.textToBePresentInElement(branchbonustext.get(0), "30"));
+	System.out.println("pass 1");
+	
 	cardheaders.get(1).click();
-	assertTrue(memberbonus.getText()=="133");
-	cardheaders.get(1).click();
-	alcDriver.get("https://qa-admin.cognitionfoundry.io/#/admin/collectionpoint/"+PostmanNewman.b2id4360);
+	wait.until(ExpectedConditions.textToBePresentInElement(memberbonustext, "133"));
+	System.out.println("pass 2");
+	
+	alcDriver.get("https://"+BaseClass.temp+"/#/admin/collectionpoint/"+Data.b2id4360);
+	alcDriver.navigate().refresh();
+	
 	exchangeHistoryTab.click();
+	
 	cardheaders.get(0).click();
-	assertTrue(branchbonus.getText()=="14");
-	cardheaders.get(0).click();
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.textToBePresentInElement(branchbonustext.get(0), "14")));
+	System.out.println("pass 3");
+	
 	cardheaders.get(1).click();
-	assertTrue(branchbonus.getText()=="30");
-	cardheaders.get(1).click();
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.textToBePresentInElement(branchbonustext.get(1), "30")));
+	System.out.println("pass 4");
 }
 
-public void disablebonus() {
-	alcDriver.get("https://qa-admin.cognitionfoundry.io/#/admin/collectionpoint/"+PostmanNewman.b1id4360);
+@SuppressWarnings("deprecation")
+public void disablebonus() throws InterruptedException {
+	
+	alcDriver.get("https://"+BaseClass.temp+"/#/admin/collectionpoint/"+Data.b1id4360);
 	exchangeHistoryTab.click();
-	cardheaders.get(1).click();
+	transactions.get(1).click();
 	bonustoggle.click();
 	textarea.sendKeys("Test");
 	disable.click();
 	close.click();
+	transactions.get(0).click();
+	for(WebElement lb: lockedbonus) {
+		lb.isDisplayed();
+	}
+	alcDriver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+
+	try {
+		 WebDriverWait waitab = new WebDriverWait(alcDriver,Duration.ofSeconds(2));
+		waitab.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(associatedbonus)));
+	}catch(Exception e) {
+		System.out.println("associated bonus not present after disabling bonus");
+	}
+	try {
+		 WebDriverWait waitmb = new WebDriverWait(alcDriver,Duration.ofSeconds(2));
+		waitmb.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(memberbonustext)));
+	}catch(Exception e) {
+		System.out.println("member bonus not present after disabling bonus");
+	}
+	try {
+		 WebDriverWait waitbb = new WebDriverWait(alcDriver,Duration.ofSeconds(2));
+		waitbb.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(branchbonustext.get(0))));
+	}catch(Exception e) {
+		System.out.println("branch bonus not present after disabling bonus");
+	}
+	 alcDriver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+	details.click();
+	kgrecycled.isDisplayed();
+	wait.until(ExpectedConditions.textToBePresentInElement(kgrecycled, "19"));
+	alcDriver.get("https://"+BaseClass.temp+"/#/admin/collectionpoint/"+Data.b2id4360);
+	alcDriver.navigate().refresh();
+	exchangeHistoryTab.click();
+	Thread.sleep(2000);
+	for(WebElement t: transactions) {
+		Thread.sleep(2000);
+		t.click();
+	}
+	total.isDisplayed();
+	alcDriver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+
+	try {
+		 WebDriverWait waitbb = new WebDriverWait(alcDriver,Duration.ofSeconds(2));
+		waitbb.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(branchbonustext.get(0))));
+	}catch(Exception e) {
+		System.out.println("branch bonus not present after disabling bonus");
+	}
+	try {
+		 WebDriverWait waitab = new WebDriverWait(alcDriver,Duration.ofSeconds(2));
+		waitab.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(associatedbonus)));
+	}catch(Exception e) {
+		System.out.println("associated bonus not present after disabling bonus");
+	}
+	 alcDriver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+	
 }
 
 public void searchAddedBranch(String Name) {

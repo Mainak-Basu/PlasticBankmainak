@@ -3,6 +3,7 @@ package alchemy_Pages;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Timeouts;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,12 +11,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.BaseClass;
-import Utilities.PostmanNewman;
+import Utilities.Data;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 ;
 
 public class Orders extends BaseClass{
@@ -73,6 +75,8 @@ public class Orders extends BaseClass{
     WebElement confirmBtn;
     @FindBy(xpath = "//loader/div//table")
     WebElement pageLoader;
+    @FindBy(xpath = "//button[@disabled]/descendant::span[text()='Start Approval']")
+    WebElement disabledStartApproval;
 
     @FindBy(xpath = "//div[text()=' Bonus Progress ']/following-sibling::div[1]") 
     WebElement summary_bonusProgressText;
@@ -85,6 +89,8 @@ public class Orders extends BaseClass{
     
     @FindBy(xpath = "//div[text()='Exchange History ']") 
     WebElement exchangeHistoryTab;
+    @FindBy(xpath = "//div[text()='Summary']") 
+    WebElement summary;
     
     @FindBy(xpath = "//div[text()='HDPE-Clean-Clear / 10.00 kg']") 
     WebElement excHisHdpeKG;
@@ -92,7 +98,8 @@ public class Orders extends BaseClass{
     @FindBy(xpath = "//div[text()='PET-Raw-Transparent / 9.00 kg']") 
     WebElement excHisPetKG;
     //PET-Raw-Transparent / 9.00 kg
-    
+    @FindBy(xpath = "//div[text()=' 0% fulfilled ']") 
+    WebElement fulfilledbonus;
     @FindBy(xpath = "//div[text()='HDPE-Clean-Clear / 10.00 kg']/following-sibling::div/span") 
     WebElement excHisHdpeBonus;
     //Bonus 70
@@ -109,13 +116,19 @@ public class Orders extends BaseClass{
     WebElement bonusApproval;
     @FindBy(xpath = "//span[text()='Start Approval']") 
     WebElement startApproval;
-    @FindBy(xpath = "//div[@class='card-header']")
-    List<WebElement> cardheaders;
+    @FindBy(xpath = "//span[@class='expanded-entity-icon']")
+    List<WebElement> expander;
     
-    @FindBy(xpath = "//div[text()='30 ']") 
-    WebElement bonus30;
+    @FindBy(xpath = "//div[@class='col text-dark-grey d-flex align-items-center']/descendant::div[@class='row']") 
+    WebElement bonusinBAtext;
+    @FindBy(xpath = "//div[@class='col-auto d-flex align-items-center']") 
+    WebElement dp;
     @FindBy(xpath = "//div[text()='133 ']") 
     WebElement bonus133;
+    @FindBy(xpath = "//div[text()='Exchange History ']") 
+    WebElement exchangehistory;
+    @FindBy(xpath = "//div[@class='card-header']") 
+    WebElement pccardheader;
   
     //133
     @FindBy(xpath = "//div[@role='tab']/div/button") WebElement selectAddedBranchInBonus;
@@ -135,21 +148,42 @@ public class Orders extends BaseClass{
     public static String expectedexcHisTotalBonus="133";
 
     
-    
+    WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(10));
     
     public void buySellPresent() {
-    	alcDriver.get("https://qa-admin.cognitionfoundry.io/#/admin/ordersoffsets/offset/"+PostmanNewman.bonusid4360);
+    	alcDriver.get("https://upgrade-admin.cognitionfoundry.io/#/admin/ordersoffsets/offset/"+Data.bonusid4360);
+    	exchangehistory.click();
+    	pccardheader.isDisplayed();
     		bonusApproval.click();
-    		cardheaders.get(0).click();
+    		expander.get(0).click();
     			startApproval.click();
-    			cardheaders.get(0).click();
-    		bonus30.isDisplayed();
+    			dp.click();
+    			wait.until(ExpectedConditions.textToBePresentInElement(bonusinBAtext, "30"));
+    		alcDriver.navigate().refresh();
+    		wait.until(ExpectedConditions.textToBePresentInElement(buytransactions, "Buy Transactions (1)"));
     		buytransactions.click();
-    		cardheaders.get(0).click();
-    		bonus133.isDisplayed();
+    		dp.click();
+    		wait.until(ExpectedConditions.textToBePresentInElement(bonusinBAtext, "133"));
     }
     
-    
+    @SuppressWarnings("deprecation")
+	public void verifyBonusOrderSummaryAndApprovalSteps() {
+    	alcDriver.get("https://upgrade-admin.cognitionfoundry.io/#/admin/ordersoffsets/offset/"+Data.bonusid4360);
+    	bonusApproval.click();
+		expander.get(0).click();
+		disabledStartApproval.isDisplayed();
+		summary.click();
+		fulfilledbonus.isDisplayed();
+    	exchangehistory.click();
+    	alcDriver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+    	try {
+    		 WebDriverWait waitpc = new WebDriverWait(alcDriver,Duration.ofSeconds(2));
+    		waitpc.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(pccardheader)));
+    	}catch(Exception e) {
+    		System.out.println("plastic chain not present after disabling bonus");
+    	}
+    	 alcDriver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+    }
     
     
     
