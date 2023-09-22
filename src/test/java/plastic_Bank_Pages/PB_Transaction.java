@@ -163,7 +163,12 @@ public void verifyMemberBonusPresent() throws InterruptedException {
 	delayed_bonus.isDisplayed();
 	pb_logo_bonus.isDisplayed();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.textToBePresentInElement(memberbonustext, "133")));
-	
+	assertTrue(memberbonustext.getText().equals("133"));
+	Thread.sleep(2000);
+	 TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		Thread.sleep(2000);
 	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
 	menu.click();
@@ -188,7 +193,12 @@ public void verifyBranch1BonusPresent() throws InterruptedException {
 	unlock_bonus.isDisplayed();
 	pb_logo_bonus.isDisplayed();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.textToBePresentInElement(bonustextbranch, "30")));
-	
+	assertTrue(bonustextbranch.getText().equals("30"));
+	Thread.sleep(2000);
+	 TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		Thread.sleep(2000);
 	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
 	menu.click();
@@ -213,7 +223,12 @@ public void verifyBranch2BonusPresent() throws InterruptedException {
 	unlock_bonus.isDisplayed();
 	pb_logo_bonus.isDisplayed();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.textToBePresentInElement(bonustextbranch, "14")));
-	
+	assertTrue(bonustextbranch.getText().equals("14"));
+	Thread.sleep(2000);
+	 TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		Thread.sleep(2000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
 	menu.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
@@ -237,6 +252,11 @@ public void verifyMemberBonusNotPresent() throws InterruptedException {
 	}catch(Exception e) {
 		
 	}
+	Thread.sleep(2000);
+	 TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		Thread.sleep(2000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
 	menu.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
@@ -271,7 +291,11 @@ public void verifyBranch1BonusNotPresent() throws InterruptedException {
 	}catch(Exception e) {
 		
 	}
-	
+	Thread.sleep(2000);
+	 TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		Thread.sleep(2000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
 	menu.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
@@ -306,6 +330,11 @@ public void verifyBranch2BonusNotPresent() throws InterruptedException {
 	}catch(Exception e) {
 		
 	}
+	Thread.sleep(2000);
+	 TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		Thread.sleep(2000);
 	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
 	menu.click();

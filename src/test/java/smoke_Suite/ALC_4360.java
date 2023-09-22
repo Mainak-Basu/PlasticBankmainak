@@ -34,7 +34,7 @@ public class ALC_4360 extends BaseClass{
 	}
 	
         @Test(priority=2)
-        public void appSteps() throws InterruptedException {
+        public void appSteps() throws InterruptedException, IOException {
         	      PB_LoginPage lo =new PB_LoginPage(pbDriver); 
         	      lo.login(Data.mnum4360, password); 
         	      PB_Transaction p=new PB_Transaction(pbDriver);
@@ -46,7 +46,8 @@ public class ALC_4360 extends BaseClass{
        			  PB_LoginPage lo2 = new PB_LoginPage(pbDriver); 
        			  lo2.login(Data.b2number4360, password);
        			  PB_Transaction p2=new PB_Transaction(pbDriver);
-       			  p2.verifyBranch2BonusPresent();	
+       			  p2.verifyBranch2BonusPresent();                             
+       			
        			  Orders o= new Orders(alcDriver);
                   o.buySellPresent();
 }

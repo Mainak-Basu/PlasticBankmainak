@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,6 +21,7 @@ import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Timeouts;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -109,7 +111,8 @@ WebElement splitModeToggle;
 WebElement uploadBuyReceiptsToggle;
 @FindBy(xpath = "//label[text()='Show Token/Market Rate']/parent::div/div")
 WebElement tokenMarketToggle;
-
+@FindBy(xpath = "//li[contains(@class,'page-item')]")
+WebElement lastItemOnPaage;
 @FindBy(xpath = "//label[text()='Show Token/Market Rate']/parent::div/div")
 WebElement fraudToggle;
 @FindBy(xpath = "//label[text()='Show Token/Market Rate']/parent::div/div")
@@ -184,23 +187,48 @@ List<WebElement> cardheaders;
 List<WebElement> branchDetailsTagTexts;
 
 WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(10));
-public void verifykgrecycled() {
+public void verifykgrecycled() throws InterruptedException {
 	alcDriver.get("https://"+BaseClass.temp+"/#/admin/collectionpoint/"+Data.b1id4360);
 	kgrecycled.isDisplayed();
 	System.out.println("-----"+kgrecycled.getText()+"-----");
 	wait.until(ExpectedConditions.textToBePresentInElement(kgrecycled, "19"));
+	assertTrue(kgrecycled.getText().equals("19"));
+	Thread.sleep(2000);
+	 TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		Thread.sleep(2000);
+
 	System.out.println("pass 19");
 }
 
-public void verifyDelayedBonus() {
+public void verifyDelayedBonus() throws InterruptedException {
 	exchangeHistoryTab.click();
 	
 	cardheaders.get(0).click();
 	wait.until(ExpectedConditions.textToBePresentInElement(branchbonustext.get(0), "30"));
+	assertTrue(branchbonustext.get(0).getText().equals("30"));
+	Thread.sleep(2000);
+
+	 TakesScreenshot ts13 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot13 = ts13.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot13));
+		Thread.sleep(2000);
+
 	System.out.println("pass 1");
 	
 	cardheaders.get(1).click();
 	wait.until(ExpectedConditions.textToBePresentInElement(memberbonustext, "133"));
+	assertTrue(memberbonustext.getText().equals("133"));
+	Actions action = new Actions(alcDriver);
+	action.moveToElement(lastItemOnPaage).build().perform();
+	Thread.sleep(2000);
+
+	 TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		Thread.sleep(2000);
+
 	System.out.println("pass 2");
 	
 	alcDriver.get("https://"+BaseClass.temp+"/#/admin/collectionpoint/"+Data.b2id4360);
@@ -210,10 +238,26 @@ public void verifyDelayedBonus() {
 	
 	cardheaders.get(0).click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.textToBePresentInElement(branchbonustext.get(0), "14")));
+	assertTrue(branchbonustext.get(0).getText().equals("14"));
+	Thread.sleep(2000);
+
+	 TakesScreenshot ts112 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot112 = ts112.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot112));
+		Thread.sleep(2000);
 	System.out.println("pass 3");
 	
 	cardheaders.get(1).click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.textToBePresentInElement(branchbonustext.get(1), "30")));
+	assertTrue(branchbonustext.get(1).getText().equals("30"));
+	action.moveToElement(lastItemOnPaage).build().perform();
+	Thread.sleep(2000);
+
+	 TakesScreenshot ts11 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot11 = ts11.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot11));
+		Thread.sleep(2000);
+
 	System.out.println("pass 4");
 }
 
@@ -251,6 +295,17 @@ public void disablebonus() throws InterruptedException {
 	}catch(Exception e) {
 		System.out.println("branch bonus not present after disabling bonus");
 	}
+	
+	Actions action = new Actions(alcDriver);
+	action.moveToElement(lastItemOnPaage).build().perform();
+	Thread.sleep(2000);
+
+	 TakesScreenshot ts11 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot11 = ts11.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot11));
+		Thread.sleep(2000);
+    
+	    
 	 alcDriver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 	details.click();
 	kgrecycled.isDisplayed();
@@ -278,6 +333,17 @@ public void disablebonus() throws InterruptedException {
 	}catch(Exception e) {
 		System.out.println("associated bonus not present after disabling bonus");
 	}
+	
+	
+	action.moveToElement(lastItemOnPaage).build().perform();
+	Thread.sleep(2000);
+
+	 TakesScreenshot ts111 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot111 = ts111.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot111));
+		Thread.sleep(2000);
+  
+	    
 	 alcDriver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 	
 }
