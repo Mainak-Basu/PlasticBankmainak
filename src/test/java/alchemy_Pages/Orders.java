@@ -179,6 +179,10 @@ public class Orders extends BaseClass{
     		bonusApproval.click();
     		expander.get(0).click();
     			startApproval.click();
+    			wait.until(ExpectedConditions.textToBePresentInElement(buytransactions, "Buy Transactions (1)"));
+    			buytransactions.click();
+    			wait.until(ExpectedConditions.textToBePresentInElement(selltransactions, "Sell Transactions (1)"));
+    			selltransactions.click();
     			wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(dp)));
     			dp.click();
     			

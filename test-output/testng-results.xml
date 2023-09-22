@@ -2,100 +2,100 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-22T12:45:54 IST" name="Default suite" finished-at="2023-09-22T12:55:05 IST" duration-ms="550485">
+  <suite started-at="2023-09-22T17:23:45 IST" name="Default suite" finished-at="2023-09-22T17:32:29 IST" duration-ms="524487">
     <groups>
     </groups>
-    <test started-at="2023-09-22T12:45:54 IST" name="Default test" finished-at="2023-09-22T12:55:05 IST" duration-ms="550485">
+    <test started-at="2023-09-22T17:23:45 IST" name="Default test" finished-at="2023-09-22T17:32:29 IST" duration-ms="524487">
       <class name="smoke_Suite.ALC_4360">
-        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:45:54 IST" name="generateBranchMemberName" finished-at="2023-09-22T12:45:54 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:23:45 IST" name="generateBranchMemberName" finished-at="2023-09-22T17:23:45 IST" duration-ms="12" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBranchMemberName -->
-        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:45:54 IST" name="generateBranchName" finished-at="2023-09-22T12:45:54 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:23:45 IST" name="generateBranchName" finished-at="2023-09-22T17:23:45 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBranchName -->
-        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:45:54 IST" name="generateRandomBranchMemberNumber" finished-at="2023-09-22T12:45:54 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:23:45 IST" name="generateRandomBranchMemberNumber" finished-at="2023-09-22T17:23:45 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateRandomBranchMemberNumber -->
-        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:45:54 IST" name="generateRandomLastName" finished-at="2023-09-22T12:45:54 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateRandomLastName -->
-        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:45:54 IST" name="generateRandomNumber" finished-at="2023-09-22T12:45:54 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:23:45 IST" name="generateRandomNumber" finished-at="2023-09-22T17:23:45 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateRandomNumber -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:45:54 IST" name="setup" finished-at="2023-09-22T12:46:34 IST" duration-ms="39761" status="PASS">
+        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:23:45 IST" name="generateRandomLastName" finished-at="2023-09-22T17:23:45 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateRandomLastName -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:23:45 IST" name="setup" finished-at="2023-09-22T17:25:45 IST" duration-ms="120203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="run4360data()[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:46:34 IST" name="run4360data" finished-at="2023-09-22T12:47:37 IST" duration-ms="62951" status="PASS">
+        <test-method signature="run4360data()[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:25:45 IST" name="run4360data" finished-at="2023-09-22T17:26:40 IST" duration-ms="55186" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- run4360data -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:47:37 IST" name="afterMethod" finished-at="2023-09-22T12:47:37 IST" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:26:40 IST" name="afterMethod" finished-at="2023-09-22T17:26:40 IST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=run4360data status=SUCCESS method=ALC_4360.run4360data()[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe] output={null}]]]>
+                <![CDATA[[TestResult name=run4360data status=SUCCESS method=ALC_4360.run4360data()[pri:0, instance:smoke_Suite.ALC_4360@660acfb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method signature="alchemySteps()[pri:1, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:47:37 IST" name="alchemySteps" finished-at="2023-09-22T12:50:20 IST" duration-ms="162689" status="PASS">
+        <test-method signature="alchemySteps()[pri:1, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:26:41 IST" name="alchemySteps" finished-at="2023-09-22T17:27:33 IST" duration-ms="52957" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- alchemySteps -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:50:20 IST" name="afterMethod" finished-at="2023-09-22T12:50:20 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:27:33 IST" name="afterMethod" finished-at="2023-09-22T17:27:33 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=alchemySteps status=SUCCESS method=ALC_4360.alchemySteps()[pri:1, instance:smoke_Suite.ALC_4360@5efa40fe] output={null}]]]>
+                <![CDATA[[TestResult name=alchemySteps status=SUCCESS method=ALC_4360.alchemySteps()[pri:1, instance:smoke_Suite.ALC_4360@660acfb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method signature="appSteps()[pri:2, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:50:20 IST" name="appSteps" finished-at="2023-09-22T12:52:32 IST" duration-ms="131863" status="PASS">
+        <test-method signature="appSteps()[pri:2, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:27:33 IST" name="appSteps" finished-at="2023-09-22T17:29:29 IST" duration-ms="115347" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- appSteps -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:52:32 IST" name="afterMethod" finished-at="2023-09-22T12:52:32 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:29:29 IST" name="afterMethod" finished-at="2023-09-22T17:29:29 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=appSteps status=SUCCESS method=ALC_4360.appSteps()[pri:2, instance:smoke_Suite.ALC_4360@5efa40fe] output={null}]]]>
+                <![CDATA[[TestResult name=appSteps status=SUCCESS method=ALC_4360.appSteps()[pri:2, instance:smoke_Suite.ALC_4360@660acfb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method signature="disablebonus()[pri:3, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:52:32 IST" name="disablebonus" finished-at="2023-09-22T12:55:03 IST" duration-ms="151635" status="PASS">
+        <test-method signature="disablebonus()[pri:3, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:29:29 IST" name="disablebonus" finished-at="2023-09-22T17:32:25 IST" duration-ms="176239" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- disablebonus -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:55:03 IST" name="afterMethod" finished-at="2023-09-22T12:55:03 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:32:25 IST" name="afterMethod" finished-at="2023-09-22T17:32:25 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=disablebonus status=SUCCESS method=ALC_4360.disablebonus()[pri:3, instance:smoke_Suite.ALC_4360@5efa40fe] output={null}]]]>
+                <![CDATA[[TestResult name=disablebonus status=SUCCESS method=ALC_4360.disablebonus()[pri:3, instance:smoke_Suite.ALC_4360@660acfb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:55:03 IST" name="teardown" finished-at="2023-09-22T12:55:04 IST" duration-ms="828" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:32:25 IST" name="teardown" finished-at="2023-09-22T17:32:26 IST" duration-ms="751" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="teardown1()[pri:0, instance:smoke_Suite.ALC_4360@5efa40fe]" started-at="2023-09-22T12:55:04 IST" name="teardown1" finished-at="2023-09-22T12:55:05 IST" duration-ms="470" status="PASS">
+        <test-method is-config="true" signature="teardown1()[pri:0, instance:smoke_Suite.ALC_4360@660acfb]" started-at="2023-09-22T17:32:26 IST" name="teardown1" finished-at="2023-09-22T17:32:29 IST" duration-ms="3575" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown1 -->

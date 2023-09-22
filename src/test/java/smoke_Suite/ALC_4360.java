@@ -1,5 +1,8 @@
 package smoke_Suite;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import org.testng.annotations.Listeners;
@@ -18,7 +21,6 @@ import plastic_Bank_Pages.PB_Transaction;
 @Listeners({AllureTestNg.class, ScreenshotListener.class})
 public class ALC_4360 extends BaseClass{
 
-	
 	@Test(priority=0)
 	public void run4360data() throws IOException {
 		Data p= new Data();
